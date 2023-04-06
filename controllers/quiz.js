@@ -22,6 +22,7 @@ exports.create = async (req, res) => {
 exports.getAll = async (req, res) => {
     try {
         const quizzes = await Quiz.findAll()
+
         res.json({
             message: "Quizzes retrieved successfully",
             data: quizzes
@@ -90,16 +91,16 @@ exports.findOne = async (req, res) => {
 }
 
 //menampilkan quiz berdasarkan kategori
-exports.getByCategoryId = async (req, res) => {
+exports.getByContentId = async (req, res) => {
     const id = req.params.id
     try {
         const quizzes = await Quiz.findAll({
             where: {
-                categoryId: id
+                contentId: id
             }
         })
         res.json({
-            message: `Quizzes retrieved successfully with categoryId=${id}.`,
+            message: `Quizzes retrieved successfully with contentId=${id}.`,
             data: quizzes,
         });
     } catch (error) {

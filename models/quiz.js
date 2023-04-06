@@ -9,21 +9,12 @@ module.exports = (sequelize, Sequelize) => {
         b: {
             type: Sequelize.STRING,
         },
-        c: {
-            type: Sequelize.STRING,
-        },
-        d: {
-            type: Sequelize.STRING,
-        },
         key: {
             type: Sequelize.STRING,
         },
-        categoryId: {
-            type: Sequelize.STRING,
-        },
-        levelId: {
-            type: Sequelize.STRING,
-        },
+        contentId: {
+            type: Sequelize.INTEGER,
+        }
     });
     return Quiz;
 }
